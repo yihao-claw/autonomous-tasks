@@ -1,0 +1,18 @@
+{
+  "name": "Daily RSS Digest",
+  "description": "每天早上6点（日本时间）生成RSS摘要",
+  "schedule": "0 6 * * *",
+  "timezone": "Asia/Tokyo",
+  "enabled": true,
+  "script": "/home/node/.openclaw/workspace/scripts/daily-rss-digest.sh",
+  "outputs": {
+    "telegram": {
+      "channel": "-1003767828002",
+      "enabled": true
+    }
+  },
+  "metadata": {
+    "created": "2026-02-23",
+    "description": "自动整理RSS订阅，每天早上6点（JST）发送精选摘要到Telegram"
+  }
+}

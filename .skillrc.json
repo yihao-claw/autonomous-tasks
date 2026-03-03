@@ -1,0 +1,11 @@
+{
+  "skills": [
+    {
+      "id": "ddg-search",
+      "path": "./skills/ddg-search",
+      "enabled": true,
+      "name": "DuckDuckGo Web Search",
+      "description": "Search the web using DuckDuckGo without requiring an API key"
+    }
+  ]
+}

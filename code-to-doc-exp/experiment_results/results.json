@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "project_path": "/home/node/.openclaw/workspace/code-to-doc-exp/datautils_project/datautils",
+    "project_size": "1028 LOC",
+    "timestamp": 1771818075.9541776
+  },
+  "analysis": {
+    "analysis_time_ms": 5.650758743286133,
+    "num_modules": 7,
+    "total_functions": 30,
+    "total_classes": 5,
+    "total_methods": 17
+  },
+  "generation": {
+    "generation_time_ms": 0.10323524475097656,
+    "avg_time_per_module_ms": 0.014202935355050223
+  },
+  "quality_summary": {
+    "avg_overall": 84.76190476190477,
+    "avg_completeness": 105.0,
+    "avg_clarity": 86.66666666666667,
+    "avg_consistency": 105.0
+  },
+  "cost": {
+    "analysis_time_ms": 5.650758743286133,
+    "generation_time_ms": 0.10323524475097656,
+    "total_time_ms": 5.753993988037109,
+    "per_function_cost_ms": 0.16439982822963167,
+    "thousand_function_cost_ms": 164.39982822963168,
+    "thousand_function_cost_s": 0.16439982822963167
+  }
+}

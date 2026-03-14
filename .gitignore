@@ -3,3 +3,7 @@ backups/
 memory/evolution/gep_prompt_*.json
 memory/evolution/gep_prompt_*.txt
 plugins/
+node_modules/
+memory_lancedb/
+*.node
+logs/

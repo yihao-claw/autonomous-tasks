@@ -1,0 +1,223 @@
+📰 Fetching RSS feeds...
+Found 102 feeds
+Fetching: Slashdot... ✗ (no items)
+Fetching: bbcchinese.com | 新聞主頁... ✓ (10 items)
+Fetching: CNN... ✓ (10 items)
+Fetching: ABC News... ✓ (10 items)
+Fetching: bbcchinese.com | 國際... ✓ (10 items)
+Fetching: TechCrunch... ✓ (10 items)
+Fetching: Inside 硬塞的網路趨勢觀察... ✗ (fetch failed)
+Fetching: Engadget 中文版... ✓ (10 items)
+Fetching: 佛祖球球... ✓ (10 items)
+Fetching: Gea-Suan Lin's BLOG... ✓ (10 items)
+Fetching: skyfall.dev... ✓ (9 items)
+Fetching: blog.jim-nielsen.com... ✓ (10 items)
+Fetching: dfarq.homeip.net... ✗ (no items)
+Fetching: pluralistic.net... ✓ (10 items)
+Fetching: shkspr.mobi... ✓ (10 items)
+Fetching: chiark.greenend.org.uk/~sgtatham... ✓ (10 items)
+Fetching: tedunangst.com... ✗ (fetch failed)
+Fetching: timsh.org... ✓ (10 items)
+Fetching: bernsteinbear.com... ✓ (10 items)
+Fetching: tomrenner.com... ✓ (10 items)
+Fetching: lucumr.pocoo.org... ✓ (10 items)
+Fetching: refactoringenglish.com... ✓ (10 items)
+Fetching: gilesthomas.com... ✓ (10 items)
+Fetching: dynomight.net... ✓ (10 items)
+Fetching: paulgraham.com... ✓ (10 items)
+Fetching: tedium.co... ✓ (10 items)
+Fetching: matklad.github.io... ✓ (10 items)
+Fetching: susam.net... ✓ (10 items)
+Fetching: joanwestenberg.com... ✓ (10 items)
+Fetching: terriblesoftware.org... ✓ (10 items)
+Fetching: minimaxir.com... ✓ (10 items)
+Fetching: philiplaine.com... ✓ (8 items)
+Fetching: xania.org... ✓ (10 items)
+Fetching: lcamtuf.substack.com... ✓ (10 items)
+Fetching: utcc.utoronto.ca/~cks... ✓ (10 items)
+Fetching: geoffreylitt.com... ✓ (10 items)
+Fetching: mitchellh.com... ✓ (10 items)
+Fetching: martinalderson.com... ✓ (10 items)
+Fetching: antirez.com... ✓ (10 items)
+Fetching: simone.org... ✓ (10 items)
+Fetching: micahflee.com... ✓ (10 items)
+Fetching: downtowndougbrown.com... ✓ (10 items)
+Fetching: fabiensanglard.net... ✓ (10 items)
+Fetching: wheresyoured.at... ✓ (10 items)
+Fetching: overreacted.io... ✓ (10 items)
+Fetching: jayd.ml... ✓ (10 items)
+Fetching: danieldelaney.net... ✓ (10 items)
+Fetching: michael.stapelberg.ch... ✓ (10 items)
+Fetching: it-notes.dragas.net... ✓ (10 items)
+Fetching: beej.us... ✓ (10 items)
+Fetching: ericmigi.com... ✓ (10 items)
+Fetching: construction-physics.com... ✓ (10 items)
+Fetching: buttondown.com/hillelwayne... ✓ (10 items)
+Fetching: rachelbythebay.com... ✓ (1 items)
+Fetching: gwern.net... ✓ (10 items)
+Fetching: mjg59.dreamwidth.org... ✓ (10 items)
+Fetching: devblogs.microsoft.com/oldnewthing... ✓ (10 items)
+Fetching: oldvcr.blogspot.com... ✓ (10 items)
+Fetching: maurycyz.com... ✓ (5 items)
+Fetching: garymarcus.substack.com... ✓ (10 items)
+Fetching: abortretry.fail... ✓ (10 items)
+Fetching: idiallo.com... ✓ (10 items)
+Fetching: brutecat.com... ✓ (4 items)
+Fetching: entropicthoughts.com... ✓ (10 items)
+Fetching: miguelgrinberg.com... ✓ (10 items)
+Fetching: nesbitt.io... ✓ (10 items)
+Fetching: jyn.dev... ✓ (10 items)
+Fetching: keygen.sh... ✓ (10 items)
+Fetching: seangoedecke.com... ✓ (10 items)
+Fetching: troyhunt.com... ✓ (10 items)
+Fetching: righto.com... ✓ (10 items)
+Fetching: hugotunius.se... ✓ (10 items)
+Fetching: chadnauseam.com... ✓ (10 items)
+Fetching: berthub.eu... ✓ (10 items)
+Fetching: simonwillison.net... ✓ (10 items)
+Fetching: eli.thegreenplace.net... ✓ (5 items)
+Fetching: jeffgeerling.com... ✓ (10 items)
+Fetching: danielwirtz.com... ✓ (10 items)
+Fetching: blog.pixelmelt.dev... ✓ (10 items)
+Fetching: hey.paris... ✓ (10 items)
+Fetching: krebsonsecurity.com... ✓ (10 items)
+Fetching: bogdanthegeek.github.io... ✓ (8 items)
+Fetching: computer.rip... ✓ (10 items)
+Fetching: daringfireball.net... ✓ (10 items)
+Fetching: worksonmymachine.substack.com... ✓ (10 items)
+Fetching: aresluna.org... ✓ (10 items)
+Fetching: anildash.com... ✓ (10 items)
+Fetching: xeiaso.net... ✓ (10 items)
+Fetching: geohot.github.io... ✓ (10 items)
+Fetching: borretti.me... ✓ (10 items)
+Fetching: steveblank.com... ✓ (10 items)
+Fetching: filfre.net... ✓ (10 items)
+Fetching: experimental-history.com... ✓ (10 items)
+Fetching: evanhahn.com... ✓ (10 items)
+Fetching: rakhim.exotext.com... ✓ (10 items)
+Fetching: matduggan.com... ✓ (10 items)
+Fetching: dwarkesh.com... ✓ (10 items)
+Fetching: grantslatton.com... ✓ (10 items)
+Fetching: johndcook.com... ✓ (10 items)
+Fetching: derekthompson.org... ✓ (10 items)
+Fetching: danielchasehooper.com... ✓ (10 items)
+Fetching: herman.bearblog.dev... ✓ (10 items)
+
+✅ Processed: 98, Failed: 4
+
+============================================================
+📰 每日技术摘要 | Daily Tech Digest
+📅 2026-02-24 Tuesday
+============================================================
+
+🤖 **AI/机器学习** (359 条)
+
+1. **'Difficult to say with a straight face': Tapper reacts to Fox News' statement on settlement**
+   A settlement has been reached in Dominion Voting Systems' defamation case against Fox News, the judge for the case announced. The network will pay more than $787 million to Dominion, a lawyer for the ...
+   🔗 https://www.cnn.com/videos/politics/2023/04/18/jake-tapper-dominion-lawsuit-settlement-fox-news-statement-lead-vpx.cnn
+   📰 来源: CNN
+
+2. **My Courses Site is Moving to a New Home**
+   This is a short blog post to announce that I'm migrating the site in which I host my paid courses to a new platform at https://learn.miguelgrinberg.com. If you have purchased a course or ebook directl...
+   🔗 https://blog.miguelgrinberg.com/post/my-courses-site-is-moving-to-a-new-home
+   📰 来源: miguelgrinberg.com
+
+3. **Logic for Programmers New Release and Next Steps**
+   It's taken four months, but the next release of Logic for Programmers is now available! v0.13 is over 50,000 words, making it both 20% larger than v0.12 and officially the longest thing I have ever wr...
+   🔗 https://buttondown.com/hillelwayne/archive/logic-for-programmers-new-release-and-next-steps/
+   📰 来源: buttondown.com/hillelwayne
+
+4. **WATCH:  New dinosaur species discovered deep in the Sahara Desert**
+   Spinosaurus Mirabilis is believed to be roughly the size of a Tyrannosaurus Rex and about 95 million years old, researchers said
+   🔗 https://abcnews.com/US/video/new-dinosaur-species-discovered-deep-sahara-desert-130370067
+   📰 来源: ABC News
+
+5. **TOP 11 AI MARKETING TOOLS YOU SHOULD USE (Updated 2022)**
+   &nbsp;&nbsp;&nbsp;The marketing industry is turning to artificial intelligence (AI) as a way to save time and execute smarter, more personalized campaigns. 61% of marketers say AI software is the most...
+   🔗 https://techncruncher.blogspot.com/2022/07/top-10-ai-marketing-tools-you-should-use.html
+   📰 来源: TechCrunch
+
+💻 **系统设计/编程** (97 条)
+
+1. **How to Write Compelling Software Release Announcements**
+   A release announcement showcases how the user&rsquo;s experience is better today than it was yesterday. That sounds obvious, but most release announcements seem to forget that there&rsquo;s a user at ...
+   🔗 https://refactoringenglish.com/chapters/release-announcements/
+   📰 来源: refactoringenglish.com
+
+2. **CloudPebble Returns! Plus New Pure JavaScript and Round 2 SDK**
+   As mentioned in our software roadmap, we’ve been working on many improvements to Pebble’s already pretty awesome SDK and developer…
+   🔗 https://repebble.com/blog/cloudpebble-returns-plus-pure-javascript-and-round-2-sdk
+   📰 来源: ericmigi.com
+
+3. **Could Write­Process­Memory be made faster by avoiding the intermediate buffer?**
+   I guess it could, but why bother? The post Could &lt;CODE&gt;Write&shy;Process&shy;Memory&lt;/CODE&gt; be made faster by avoiding the intermediate buffer? appeared first on The Old New Thing.
+   🔗 https://devblogs.microsoft.com/oldnewthing/20260218-00/?p=112069
+   📰 来源: devblogs.microsoft.com/oldnewthing
+
+4. **How can I distinguish between the numeric keypad 0 and the top-row 0 in the WM_CHAR message?**
+   See if it matches the scan code. The post How can I distinguish between the numeric keypad 0 and the top-row 0 in the &lt;CODE&gt;WM_&lt;WBR&gt;CHAR&lt;/CODE&gt; message? appeared first on The Old New...
+   🔗 https://devblogs.microsoft.com/oldnewthing/20260213-00/?p=112062
+   📰 来源: devblogs.microsoft.com/oldnewthing
+
+5. **How can I distinguish between the numeric keypad 0 and the top-row 0 in the WM_KEY­DOWN message?**
+   Check whether it is an extended key. The post How can I distinguish between the numeric keypad 0 and the top-row 0 in the &lt;CODE&gt;WM_&lt;WBR&gt;KEY&shy;DOWN&lt;/CODE&gt; message? appeared first on...
+   🔗 https://devblogs.microsoft.com/oldnewthing/20260212-00/?p=112059
+   📰 来源: devblogs.microsoft.com/oldnewthing
+
+🔐 **安全相关** (31 条)
+
+1. **Factional Drift: How online discussion clusters into factions**
+   Whenever one of my articles reaches some popularity, I tend not to participate in the discussion. A few weeks back, I told a story about me, my neighbor and an UHF remote. The story took on a life of ...
+   🔗 https://idiallo.com/blog/factional-drift-online?src=feed
+   📰 来源: idiallo.com
+
+2. **‘Starkiller’ Phishing Service Proxies Real Login Pages, MFA**
+   Most phishing websites are little more than static copies of login pages for popular online destinations, and they are often quickly taken down by anti-abuse activists and security firms. But a stealt...
+   🔗 https://krebsonsecurity.com/2026/02/starkiller-phishing-service-proxies-real-login-pages-mfa/
+   📰 来源: krebsonsecurity.com
+
+3. **The Kimwolf Botnet is Stalking Your Local Network**
+   The story you are reading is a series of scoops nestled inside a far more urgent Internet-wide security advisory. The vulnerability at issue has been exploited for months already, and it's time for a ...
+   🔗 https://krebsonsecurity.com/2026/01/the-kimwolf-botnet-is-stalking-your-local-network/
+   📰 来源: krebsonsecurity.com
+
+4. **Pluralistic: Doctors' union may yet save the NHS from Palantir (12 Feb 2026)**
+   Today's links Doctors' union may yet save the NHS from Palantir: There is power in the union. Hey look at this: Delights to delectate. Object permanence: Premature internet activists; Privacy Without ...
+   🔗 https://pluralistic.net/2026/02/12/palantir-is-ice/
+   📰 来源: pluralistic.net
+
+5. **I spoke about ICEBlock and Trump's app censorship on the kill switch podcast**
+   In case you missed it, last week I was on an episode of the kill switch podcast. I discussed the ICEBlock app and why it was activism theater, and how the developer handled my vulnerability report in ...
+   🔗 https://micahflee.com/i-spoke-about-iceblock-and-trumps-app-censorship-on-the-kill-switch-podcast/
+   📰 来源: micahflee.com
+
+📱 **技术新闻** (463 条)
+
+1. **Judge in Fox News-Dominion defamation trial: 'The parties have resolved their case'**
+   The judge just announced in court that a settlement has been reached in the historic defamation case between Fox News and Dominion Voting Systems.
+   🔗 https://www.cnn.com/2023/04/18/media/fox-dominion-settlement/index.html
+   📰 来源: CNN
+
+2. **White homeowner accused of shooting a Black teen who rang his doorbell turns himself in to face criminal charges**
+   • 'A major part of Ralph died': Aunt of teen shot after ringing wrong doorbell speaks • 20-year-old woman shot after friend turned into the wrong driveway in upstate New York, officials say
+   🔗 https://www.cnn.com/2023/04/18/us/kansas-city-ralph-yarl-shooting-tuesday/index.html
+   📰 来源: CNN
+
+3. **Newly released video shows scene of Jeremy Renner's snowplow accident**
+   Newly released body camera footage shows firefighters and sheriff's deputies rushing to help actor Jeremy Renner after a near-fatal snowplow accident in January. The "Avengers" actor broke more than 3...
+   🔗 https://www.cnn.com/videos/us/2023/04/18/jeremy-renner-snowplow-accident-bodycam-nc-melas-contd-vpx.cnn
+   📰 来源: CNN
+
+4. **Suspect in Nancy Guthrie abduction appeared to visit her house before: Sources**
+   The masked man who is suspected of the abduction of Nancy Guthrie appeared at her front door earlier than Feb. 1, sources told ABC News.
+   🔗 https://abcnews.com/US/masked-suspect-nancy-guthrie-abduction-appeared-visit-house/story?id=130427336
+   📰 来源: ABC News
+
+5. **A Brief History of App Icons From Apple’s Creator Studio**
+   I recently updated my collection of macOS icons to include Apple’s new “Creator Studio” family of icons. Doing this — in tandem with seeing funny things like this post on Mastodon — got me thinking ab...
+   🔗 https://blog.jim-nielsen.com/2026/history-of-creator-studio-icons/
+   📰 来源: blog.jim-nielsen.com
+
+============================================================
+📊 统计: 共处理 98 个源，获取 950 条内容
+============================================================

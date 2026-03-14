@@ -6,8 +6,9 @@ Skills define _how_ tools work. This file is for _your_ specifics — the stuff 
 
 - **General** → Chat ID: `-1003767828002` (https://t.me/c/3767828002/1)
   - Used for: Subagent progress reports, status updates
-- **每日資訊** → Chat ID: `-1003767828002`, Topic ID: `36`
-  - Used for: 每日新聞摘要 + Podcast 語音
+- **資訊新知** → Chat ID: `-1003767828002`, Topic ID: `36`
+  - Used for: 🐦 Bird 專屬 — 每日新聞摘要 + Podcast 語音 + YT 監控通知
+  - Bot: @openbird_bot (account: bird)
 
 ## What Goes Here
 

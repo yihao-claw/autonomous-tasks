@@ -12,36 +12,68 @@ Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. Read today + yesterday's daily notes from Obsidian vault
+4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md` from vault
 
 Don't ask permission. Just do it.
 
-## Memory
+## Memory — 雙層記憶系統（LanceDB + Obsidian）
 
-You wake up fresh each session. These files are your continuity:
+You wake up fresh each session. Two systems work together for your continuity:
 
-- **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
-- **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
+### 📊 Layer 1: LanceDB（搜尋引擎）
+- **工具**：`memory_store` / `memory_recall`
+- **用途**：語義搜尋（向量 + BM25 + Reranker）
+- **格式**：短筆記，< 500 字元，原子化
+- **優勢**：「備份教訓」能找到「memory maintenance」
 
-Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
+### 💎 Layer 2: Obsidian Vault（人可讀完整記錄）
+- **路徑**：`/home/node/obsidian-vault/Agents/Dan/`
+- **每日筆記**：`Agents/Dan/Daily/YYYY-MM-DD.md`
+- **長期記憶**：`Agents/Dan/MEMORY.md`
+- **工具**：`obsidian-cli search` / `obsidian-cli search-content` / 直接 Read/Write
+- **優勢**：人類可在 Mac Obsidian 瀏覽，支援 `[[wikilink]]`
 
-### 🧠 MEMORY.md - Your Long-Term Memory
+### ✍️ 寫入規則（CREATE）
 
-- **ONLY load in main session** (direct chats with your human)
-- **DO NOT load in shared contexts** (Discord, group chats, sessions with other people)
-- This is for **security** — contains personal context that shouldn't leak to strangers
-- You can **read, edit, and update** MEMORY.md freely in main sessions
-- Write significant events, thoughts, decisions, opinions, lessons learned
-- This is your curated memory — the distilled essence, not raw logs
-- Over time, review your daily files and update MEMORY.md with what's worth keeping
+**寫入指南**：`/home/node/obsidian-vault/Templates/Writing Guide.md`
+
+**每次記憶都雙寫：**
+
+1. **LanceDB**：`memory_store` — 短摘要，含關鍵字，方便語義搜尋
+2. **Obsidian**：寫入對應的 Daily note 或專門筆記 — 完整內容，人可讀
+   - 必須有 YAML frontmatter（date, tags, agent）
+   - 用 `[[wikilink]]` 連結相關筆記
+   - 用 `#tag` 分類（見 Writing Guide）
+
+```
+記住 "Yihao 不喜歡自動修改檔案"
+→ memory_store("Decision principle: 先列出再確認。Yihao 不喜歡未經確認的自動修改。")
+→ Write to /home/node/obsidian-vault/Agents/Dan/Daily/2026-03-13.md (append)
+  - 加 [[MEMORY]] 連結
+  - 加 #decision #lesson tag
+```
+
+### 🔍 搜尋規則（SEARCH）
+
+1. **先查 LanceDB**：`memory_recall("query")` — 語義匹配，最快
+2. **找不到再查 Obsidian**：`obsidian-cli search-content "query"` — 全文關鍵字
+3. **需要完整上下文**：直接 Read Obsidian 的 md 檔
+
+### 🧠 MEMORY.md - 長期記憶
+
+- **位置**：`/home/node/obsidian-vault/Agents/Dan/MEMORY.md`
+- **ONLY load in main session**（direct chats with your human）
+- **DO NOT load in shared contexts**（Discord, group chats）
+- 重要事件、決策、教訓、個人偏好
+- 定期從 Daily notes 提煉更新
 
 ### 📝 Write It Down - No "Mental Notes"!
 
-- **Memory is limited** — if you want to remember something, WRITE IT TO A FILE
+- **Memory is limited** — if you want to remember something, WRITE IT（雙寫！）
 - "Mental notes" don't survive session restarts. Files do.
-- When someone says "remember this" → update `memory/YYYY-MM-DD.md` or relevant file
-- When you learn a lesson → update AGENTS.md, TOOLS.md, or the relevant skill
+- When someone says "remember this" → `memory_store` + Obsidian Daily note
+- When you learn a lesson → `memory_store` + update AGENTS.md/SKILL.md
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
@@ -160,7 +192,7 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 - **Mentions** - Twitter/social notifications?
 - **Weather** - Relevant if your human might go out?
 
-**Track your checks** in `memory/heartbeat-state.json`:
+**Track your checks** in `/home/node/obsidian-vault/Agents/Dan/heartbeat-state.json`:
 
 ```json
 {
@@ -198,10 +230,11 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 
 Periodically (every few days), use a heartbeat to:
 
-1. Read through recent `memory/YYYY-MM-DD.md` files
+1. Read recent Obsidian Daily notes (`/home/node/obsidian-vault/Agents/Dan/Daily/`)
 2. Identify significant events, lessons, or insights worth keeping long-term
-3. Update `MEMORY.md` with distilled learnings
-4. Remove outdated info from MEMORY.md that's no longer relevant
+3. Update `/home/node/obsidian-vault/Agents/Dan/MEMORY.md` with distilled learnings
+4. Ensure important items are also in LanceDB（`memory_store`）
+5. Remove outdated info from MEMORY.md that's no longer relevant
 
 Think of it like a human reviewing their journal and updating their mental model. Daily files are raw notes; MEMORY.md is curated wisdom.
 

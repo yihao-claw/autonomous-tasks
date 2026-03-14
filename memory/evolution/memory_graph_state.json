@@ -1,11 +1,12 @@
 {
   "last_action": {
-    "action_id": "act_1772852402307_6a760315",
-    "signal_key": "session_logs_missing",
+    "action_id": "act_1773478801659_ba549142",
+    "signal_key": "memory_missing|session_logs_missing",
     "signals": [
+      "memory_missing",
       "session_logs_missing"
     ],
-    "mutation_id": "mut_1772852402305",
+    "mutation_id": "mut_1773478801657",
     "mutation_category": "innovate",
     "mutation_risk_level": "medium",
     "personality_key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
@@ -19,10 +20,10 @@
     },
     "gene_id": null,
     "gene_category": null,
-    "hypothesis_id": "hyp_1772852402306_20735000",
+    "hypothesis_id": "hyp_1773478801658_bc56d2ff",
     "capsules_used": [],
     "had_error": false,
-    "created_at": "2026-03-07T03:00:02.307Z",
+    "created_at": "2026-03-14T09:00:01.659Z",
     "outcome_recorded": false,
     "baseline_observed": {
       "agent": "main",
@@ -30,17 +31,17 @@
       "drift_enabled": false,
       "review_mode": false,
       "dry_run": false,
-      "system_health": "Uptime: 158.4h | Node: v22.22.0 | Agent RSS: 42.8MB | Disk: 46% (246.4G free) | Node Processes: 11 | Integrations: Gemini Key Missing",
+      "system_health": "Uptime: 91.1h | Node: v22.22.0 | Agent RSS: 42.7MB | Disk: 45% (254.1G free) | Node Processes: 14 | Integrations: Gemini Key Missing",
       "mood": "Mood: Unknown",
-      "scan_ms": 155,
-      "memory_size_bytes": 4449,
+      "scan_ms": 163,
+      "memory_size_bytes": 0,
       "recent_error_count": 0,
       "node": "v22.22.0",
       "platform": "darwin",
       "cwd": "/Users/yihao.wang",
       "evidence": {
         "recent_session_tail": "[NO SESSION LOGS FOUND]",
-        "today_log_tail": "[MISSING] /Users/yihao.wang/.openclaw/workspace/memory/2026-03-07.md"
+        "today_log_tail": "[MISSING] /Users/yihao.wang/.openclaw/workspace/memory/2026-03-14.md"
       }
     }
   }

@@ -5,8 +5,8 @@
 **執行頻率：每次 heartbeat 都檢查！**
 
 ### 檢查清單：
-1. ✅ 讀取 `memory/$(date +%Y-%m-%d).md` 的最後修改時間
-2. ✅ 如果距離上次更新 **> 2 小時** 且有新對話 → **立即更新**
+1. ✅ 讀取 `/home/node/obsidian-vault/Agents/Dan/Daily/$(date +%Y-%m-%d).md` 的最後修改時間
+2. ✅ 如果距離上次更新 **> 2 小時** 且有新對話 → **雙寫更新**（Obsidian + LanceDB）
 3. ✅ 檢查今日是否有重要活動未記錄
 
 ### 必須記錄的內容：
@@ -29,11 +29,10 @@
    - ✅ 成功 → 發 Telegram 通知到「每日資訊」(target: -1003767828002, threadId: 36)
    - ❌ 失敗 → 發 Telegram 通知 + 記錄錯誤到日誌
 
-**Cron Job 清單：**
-- `71c85d19` — daily-world-news（每日 JST 07:00）
-- `eb29e401` — quant-invest-monday（週一 JST 05:00）
-- `b45b7d5b` — quant-invest-friday（週五 JST 18:00）
-- `e1385348` — backup-reminder（每 12h）
+**Cron Job 清單：**（使用完整 UUID 查詢）
+- `71c85d19-ff69-409f-b03d-9d7bed7c8268` — daily-world-news（每日 JST 13:00）→ **已遷移到 bird agent**
+- `e1385348-4cb3-4449-9bb7-03dcdb2c999a` — backup-reminder（每 12h）
+- `7bdad333-78cc-4bbe-980b-f52298723484` — autonomous-daily-tasks（每日 JST 01:00）
 
 **通知格式：**
 ```

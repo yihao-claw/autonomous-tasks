@@ -1,0 +1,37 @@
+[
+  {
+    "handle": "@AndrewYNg",
+    "name": "Andrew Ng",
+    "category": "AI/ML",
+    "enabled": true,
+    "note": "Coursera co-founder, Stanford, Google Brain, Baidu AI"
+  },
+  {
+    "handle": "@kaborehk",
+    "name": "Andrej Karpathy",
+    "category": "AI/ML",
+    "enabled": true,
+    "note": "Ex-Tesla AI, OpenAI founding member"
+  },
+  {
+    "handle": "@sama",
+    "name": "Sam Altman",
+    "category": "AI/Industry",
+    "enabled": true,
+    "note": "OpenAI CEO"
+  },
+  {
+    "handle": "@ylecun",
+    "name": "Yann LeCun",
+    "category": "AI/ML",
+    "enabled": true,
+    "note": "Meta Chief AI Scientist, Turing Award"
+  },
+  {
+    "handle": "@jimfan_",
+    "name": "Jim Fan",
+    "category": "AI/Robotics",
+    "enabled": true,
+    "note": "NVIDIA Senior Research Scientist"
+  }
+]

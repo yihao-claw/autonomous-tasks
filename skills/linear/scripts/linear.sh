@@ -138,6 +138,40 @@ for l in d['data']['team']['labels']['nodes']:
 "
     ;;
 
+  add-comment)
+    # add-comment YIH-10 "comment body"
+    ID="${2:?identifier required}"
+    BODY="${3:?comment body required}"
+    ISSUE_ID=$(gql "{ issue(id: \\\"$ID\\\") { id } }" | python3 -c "import json,sys;print(json.load(sys.stdin)['data']['issue']['id'])")
+    ESCAPED=$(python3 -c "import json,sys; print(json.dumps(sys.stdin.read().strip())[1:-1])" <<< "$BODY")
+    gql "mutation { commentCreate(input: { issueId: \\\"$ISSUE_ID\\\", body: \\\"$ESCAPED\\\" }) { success comment { id } } }" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+if d['data']['commentCreate']['success']:
+    print(f\"Comment added to $ID\")
+else:
+    print('Failed to add comment')
+"
+    ;;
+
+  comments)
+    # comments YIH-10 — list comments on an issue
+    ID="${2:?identifier required}"
+    gql "{ issue(id: \\\"$ID\\\") { comments { nodes { body createdAt user { name } } } } }" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+comments=d['data']['issue']['comments']['nodes']
+if not comments:
+    print('No comments.')
+else:
+    for c in comments:
+        user=c['user']['name'] if c.get('user') else 'Unknown'
+        date=c['createdAt'][:10]
+        print(f'[{date}] {user}: {c[\"body\"][:200]}')
+        print()
+"
+    ;;
+
   states)
     gql "{ team(id: \\\"$TEAM_ID\\\") { states { nodes { id name type } } } }" | python3 -c "
 import json,sys
@@ -155,6 +189,7 @@ for s in d['data']['team']['states']['nodes']:
     echo "  update YIH-10 state \"Done\"                - Update issue state"
     echo "  update YIH-10 priority 2                  - Update issue priority"
     echo "  search \"query\"                            - Search issues"
+    echo "  comments YIH-10                           - List comments on issue"
     echo "  labels                                    - List labels"
     echo "  states                                    - List workflow states"
     ;;

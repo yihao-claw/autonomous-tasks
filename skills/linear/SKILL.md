@@ -31,6 +31,12 @@ bash $SKILL_DIR/scripts/linear.sh update YIH-10 priority 1
 # Search
 bash $SKILL_DIR/scripts/linear.sh search "token"
 
+# View comments on an issue
+bash $SKILL_DIR/scripts/linear.sh comments YIH-10
+
+# Add a comment to an issue
+bash $SKILL_DIR/scripts/linear.sh add-comment YIH-10 "comment body"
+
 # List labels and states
 bash $SKILL_DIR/scripts/linear.sh labels
 bash $SKILL_DIR/scripts/linear.sh states

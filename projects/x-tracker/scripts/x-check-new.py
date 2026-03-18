@@ -3,97 +3,108 @@
 x-check-new.py — Parse scraped X profile markdown, extract tweets, deduplicate against state.
 
 Usage:
-    echo "<markdown>" | python3 x-check-new.py --handle @AndrewYNg --state state.json
+    cat scraped.md | python3 x-check-new.py --handle @karpathy --state state.json
+    cat scraped.md | python3 x-check-new.py --handle @karpathy --state state.json --update-state
 
 Outputs JSON: {"hasNew": true/false, "newTweets": [...], "handle": "@..."}
 """
 
-import argparse, json, re, sys, os
+import argparse, json, re, sys, os, hashlib
 from datetime import datetime, timezone
 
 
 def extract_tweets(markdown: str, handle: str) -> list[dict]:
-    """Extract tweets from Brightdata's scraped X profile markdown."""
+    """Extract tweets from Brightdata's scraped X profile markdown.
+
+    Brightdata output pattern per tweet:
+        [handle] · [date link like /handle/status/ID]
+        <tweet text, possibly multi-line>
+        <optional "Show more">
+        <optional Quote block>
+        <engagement: numbers on separate lines>
+        [analytics link like /handle/status/ID/analytics]
+    """
     tweets = []
-
-    # Pattern: look for tweet-like blocks with timestamps and engagement
-    # Brightdata returns X profiles with posts containing text + metadata
     lines = markdown.split('\n')
-    current_tweet = []
-    in_tweet = False
 
-    for i, line in enumerate(lines):
-        # Detect tweet boundaries — look for the handle pattern or date patterns
-        # X profile pages show: username, handle, date, text, engagement
-        stripped = line.strip()
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
 
-        # Skip navigation/UI elements
-        if any(skip in stripped.lower() for skip in [
-            'iniciar sesión', 'regístrate', 'ver posts', 'siguiendo',
-            'seguidores', 'mostrar más', 'se unió', 'traducir',
-            'fecha de nacimiento', 'posts de ', 'respuestas',
-            'destacados', 'artículos', 'multimedia', 'fijado'
-        ]):
+        # Detect tweet start: a line with status link containing tweet ID
+        # Pattern: [Mon DD, YYYY](/handle/status/TWEET_ID) or [DD mon.](/handle/status/TWEET_ID)
+        status_match = re.search(r'\(/\w+/status/(\d+)\)', line)
+        if status_match and 'analytics' not in line:
+            tweet_id = status_match.group(1)
+
+            # Extract date text
+            date_text = re.sub(r'\[|\]\(.*?\)', '', line).strip()
+
+            # Collect tweet text lines until we hit engagement numbers or next tweet
+            i += 1
+            text_lines = []
+            while i < len(lines):
+                l = lines[i].strip()
+
+                # Stop at analytics link (end of tweet)
+                if re.search(r'/status/\d+/analytics', l):
+                    i += 1
+                    break
+
+                # Stop at next tweet's status link
+                if re.search(r'\(/\w+/status/(\d+)\)', l) and 'analytics' not in l:
+                    break
+
+                # Skip engagement number lines (standalone numbers like "1.7K", "60K", "10M")
+                if re.match(r'^[\d,.]+\s*[KMkm]?$', l):
+                    i += 1
+                    continue
+
+                # Skip markdown link-only lines (navigation)
+                if re.match(r'^\\\[', l) or l == '' or re.match(r'^\]\(/', l):
+                    i += 1
+                    continue
+
+                # Skip "Show more"
+                if l.lower() in ('show more', 'mostrar más'):
+                    i += 1
+                    continue
+
+                # Skip image markers
+                if l in ('Image', 'Video'):
+                    i += 1
+                    continue
+
+                text_lines.append(l)
+                i += 1
+
+            text = '\n'.join(text_lines).strip()
+            # Clean up remaining markdown artifacts
+            text = re.sub(r'\\\[|\\\]', '', text)
+            text = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', text)  # [text](link) → text
+            text = re.sub(r'\n{3,}', '\n\n', text)
+            text = text.strip()
+
+            if len(text) > 10:
+                tweets.append({
+                    'id': tweet_id,
+                    'date': date_text,
+                    'text': text,
+                    'url': f'https://x.com/{handle.lstrip("@")}/status/{tweet_id}',
+                    'hash': hashlib.sha256(tweet_id.encode()).hexdigest()[:16],
+                })
             continue
 
-        # Look for date patterns like "7 ene.", "27 abr. 2023", "14h", "2d"
-        date_match = re.match(
-            r'^\[?\d{1,2}\s+(ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic)\.?\s*(\d{4})?\]?$',
-            stripped, re.IGNORECASE
-        )
-        time_match = re.match(r'^\d{1,2}[hmd]$', stripped)
-
-        if date_match or time_match:
-            # Save previous tweet if any
-            if current_tweet:
-                text = '\n'.join(current_tweet).strip()
-                if len(text) > 20:  # Filter out noise
-                    tweets.append({
-                        'text': text,
-                        'id': _tweet_hash(text),
-                    })
-            current_tweet = []
-            in_tweet = True
-            continue
-
-        # Engagement metrics line (likes, retweets etc) — ends a tweet
-        if re.match(r'^\d[\d,.]*\s*(mil|K|M)?$', stripped):
-            continue
-
-        # Skip link-only lines that are X internal navigation
-        if re.match(r'^\[.*\]\(/\w+', stripped):
-            continue
-
-        # Accumulate tweet text
-        if stripped and not stripped.startswith('[') and not stripped.startswith('\\['):
-            if in_tweet or len(stripped) > 30:
-                current_tweet.append(stripped)
-                in_tweet = True
-
-    # Don't forget last tweet
-    if current_tweet:
-        text = '\n'.join(current_tweet).strip()
-        if len(text) > 20:
-            tweets.append({
-                'text': text,
-                'id': _tweet_hash(text),
-            })
+        i += 1
 
     return tweets
-
-
-def _tweet_hash(text: str) -> str:
-    """Generate a short deterministic hash for dedup."""
-    import hashlib
-    # Use first 200 chars to avoid minor rendering differences
-    return hashlib.sha256(text[:200].encode()).hexdigest()[:16]
 
 
 def load_state(path: str) -> dict:
     if os.path.exists(path):
         with open(path) as f:
             return json.load(f)
-    return {"seenHashes": {}, "lastCheck": None}
+    return {"seenIds": {}, "lastCheck": None}
 
 
 def save_state(path: str, state: dict):
@@ -103,7 +114,7 @@ def save_state(path: str, state: dict):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--handle', required=True, help='X handle e.g. @AndrewYNg')
+    parser.add_argument('--handle', required=True, help='X handle e.g. @karpathy')
     parser.add_argument('--state', default='x-tracker-state.json')
     parser.add_argument('--update-state', action='store_true',
                         help='Mark new tweets as seen in state')
@@ -115,21 +126,26 @@ def main():
         print(json.dumps({"hasNew": False, "error": "empty input", "handle": args.handle}))
         sys.exit(0)
 
+    # Check for "This account doesn't exist"
+    if "This account doesn't exist" in markdown:
+        print(json.dumps({"hasNew": False, "error": "account_not_found", "handle": args.handle}))
+        sys.exit(1)
+
     state = load_state(args.state)
     handle_key = args.handle.lower().lstrip('@')
-    seen = set(state.get("seenHashes", {}).get(handle_key, []))
+    seen = set(state.get("seenIds", {}).get(handle_key, []))
 
     all_tweets = extract_tweets(markdown, args.handle)
     new_tweets = [t for t in all_tweets if t['id'] not in seen][:args.max]
 
     if args.update_state and new_tweets:
-        if "seenHashes" not in state:
-            state["seenHashes"] = {}
-        if handle_key not in state["seenHashes"]:
-            state["seenHashes"][handle_key] = []
-        state["seenHashes"][handle_key].extend([t['id'] for t in new_tweets])
-        # Keep last 500 hashes per handle
-        state["seenHashes"][handle_key] = state["seenHashes"][handle_key][-500:]
+        if "seenIds" not in state:
+            state["seenIds"] = {}
+        if handle_key not in state["seenIds"]:
+            state["seenIds"][handle_key] = []
+        state["seenIds"][handle_key].extend([t['id'] for t in new_tweets])
+        # Keep last 200 IDs per handle
+        state["seenIds"][handle_key] = state["seenIds"][handle_key][-200:]
         state["lastCheck"] = datetime.now(timezone.utc).isoformat()
         save_state(args.state, state)
 

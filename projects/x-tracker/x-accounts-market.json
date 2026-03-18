@@ -1,0 +1,12 @@
+[
+  {"handle": "@realDonaldTrump", "name": "Donald Trump", "category": "Politics/Market", "enabled": true, "note": "美國總統，行政命令/關稅/外交直接影響Polymarket"},
+  {"handle": "@elonmusk", "name": "Elon Musk", "category": "Politics/Market", "enabled": true, "note": "Tesla/SpaceX/DOGE，推文本身就是交易標的"},
+  {"handle": "@BNONews", "name": "BNO News", "category": "Breaking News", "enabled": true, "note": "突發新聞最快來源"},
+  {"handle": "@sentdefender", "name": "Sentdefender", "category": "Geopolitics/Military", "enabled": true, "note": "軍事/地緣政治即時情報"},
+  {"handle": "@WatcherGuru", "name": "Watcher Guru", "category": "Crypto/Market", "enabled": true, "note": "加密/市場動態快訊"},
+  {"handle": "@Polymarket", "name": "Polymarket", "category": "Prediction Market", "enabled": true, "note": "Polymarket官方帳號"},
+  {"handle": "@DeItaone", "name": "Walter Bloomberg", "category": "Breaking News", "enabled": true, "note": "Bloomberg 金融快訊"},
+  {"handle": "@unusual_whales", "name": "Unusual Whales", "category": "Market/Trading", "enabled": true, "note": "異常交易追蹤"},
+  {"handle": "@POTUS", "name": "President Biden", "category": "Politics/Market", "enabled": true, "note": "白宮官方"},
+  {"handle": "@zaborek", "name": "Mateusz Zaborek", "category": "Geopolitics", "enabled": true, "note": "地緣政治分析"}
+]

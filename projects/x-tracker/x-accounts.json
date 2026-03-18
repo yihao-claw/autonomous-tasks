@@ -7,7 +7,7 @@
     "note": "Coursera co-founder, Stanford, Google Brain, Baidu AI"
   },
   {
-    "handle": "@kaborehk",
+    "handle": "@karpathy",
     "name": "Andrej Karpathy",
     "category": "AI/ML",
     "enabled": true,
@@ -33,5 +33,236 @@
     "category": "AI/Robotics",
     "enabled": true,
     "note": "NVIDIA Senior Research Scientist"
+  },
+  {
+    "handle": "@simonw",
+    "name": "Simon Willison",
+    "category": "AI/Dev Tools",
+    "enabled": true,
+    "note": "Datasette creator, LLM tooling最佳記錄者"
+  },
+  {
+    "handle": "@swyx",
+    "name": "Shawn Wang",
+    "category": "AI/Engineering",
+    "enabled": true,
+    "note": "AI Engineer社群創辦人, Latent Space podcast"
+  },
+  {
+    "handle": "@demishassabis",
+    "name": "Demis Hassabis",
+    "category": "AI/Research",
+    "enabled": true,
+    "note": "Google DeepMind CEO, Nobel Prize 2024"
+  },
+  {
+    "handle": "@hardmaru",
+    "name": "David Ha",
+    "category": "AI/Research",
+    "enabled": true,
+    "note": "Sakana AI CEO, creative AI research"
+  },
+  {
+    "handle": "@levelsio",
+    "name": "Pieter Levels",
+    "category": "Indie Dev/AI",
+    "enabled": true,
+    "note": "Nomad List, Photo AI, shipping文化代表"
+  },
+  {
+    "handle": "@_akhaliq",
+    "name": "AK",
+    "category": "AI/Papers",
+    "enabled": true,
+    "note": "Hugging Face, 每天第一個發最新AI論文"
+  },
+  {
+    "handle": "@jeffdean",
+    "name": "Jeff Dean",
+    "category": "AI/Research",
+    "enabled": true,
+    "note": "Google Chief Scientist"
+  },
+  {
+    "handle": "@ilyasut",
+    "name": "Ilya Sutskever",
+    "category": "AI/Research",
+    "enabled": true,
+    "note": "SSI創辦人, 前OpenAI首席科學家"
+  },
+  {
+    "handle": "@goodfellow_ian",
+    "name": "Ian Goodfellow",
+    "category": "AI/Research",
+    "enabled": true,
+    "note": "GAN發明者, DeepMind"
+  },
+  {
+    "handle": "@hamelboard",
+    "name": "Hamel Husain",
+    "category": "AI/Engineering",
+    "enabled": true,
+    "note": "LLM fine-tuning實戰專家"
+  },
+  {
+    "handle": "@eugeneyan",
+    "name": "Eugene Yan",
+    "category": "AI/Engineering",
+    "enabled": true,
+    "note": "Amazon Applied Scientist, ML系統設計"
+  },
+  {
+    "handle": "@sh_reya",
+    "name": "Shreya Shankar",
+    "category": "AI/MLOps",
+    "enabled": true,
+    "note": "UC Berkeley, ML ops/data quality"
+  },
+  {
+    "handle": "@jxnlco",
+    "name": "Jason Liu",
+    "category": "AI/Engineering",
+    "enabled": true,
+    "note": "Instructor作者, structured output專家"
+  },
+  {
+    "handle": "@GregKamradt",
+    "name": "Greg Kamradt",
+    "category": "AI/Engineering",
+    "enabled": true,
+    "note": "RAG/embedding實戰"
+  },
+  {
+    "handle": "@natfriedman",
+    "name": "Nat Friedman",
+    "category": "Tech/VC",
+    "enabled": true,
+    "note": "前GitHub CEO, AI投資人"
+  },
+  {
+    "handle": "@patrickc",
+    "name": "Patrick Collison",
+    "category": "Tech/VC",
+    "enabled": true,
+    "note": "Stripe CEO, 深度思考科技與社會"
+  },
+  {
+    "handle": "@paulg",
+    "name": "Paul Graham",
+    "category": "Tech/VC",
+    "enabled": true,
+    "note": "YC創辦人, 長文推特"
+  },
+  {
+    "handle": "@eladgil",
+    "name": "Elad Gil",
+    "category": "Tech/VC",
+    "enabled": true,
+    "note": "矽谷OG投資人, AI產業分析"
+  },
+  {
+    "handle": "@garrytan",
+    "name": "Garry Tan",
+    "category": "Tech/VC",
+    "enabled": true,
+    "note": "YC CEO, startup+AI趨勢"
+  },
+  {
+    "handle": "@ggerganov",
+    "name": "Georgi Gerganov",
+    "category": "AI/Open Source",
+    "enabled": true,
+    "note": "llama.cpp作者, 本地推理之王"
+  },
+  {
+    "handle": "@ollama",
+    "name": "Ollama",
+    "category": "AI/Open Source",
+    "enabled": true,
+    "note": "本地LLM官方帳號"
+  },
+  {
+    "handle": "@huggingface",
+    "name": "Hugging Face",
+    "category": "AI/Open Source",
+    "enabled": true,
+    "note": "開源AI生態系官方"
+  },
+  {
+    "handle": "@LangChainAI",
+    "name": "LangChain",
+    "category": "AI/Open Source",
+    "enabled": true,
+    "note": "Agent/RAG框架"
+  },
+  {
+    "handle": "@realDonaldTrump",
+    "name": "Donald Trump",
+    "category": "Politics/Market",
+    "enabled": true,
+    "note": "美國總統，行政命令/關稅/外交直接影響Polymarket"
+  },
+  {
+    "handle": "@elonmusk",
+    "name": "Elon Musk",
+    "category": "Politics/Market",
+    "enabled": true,
+    "note": "Tesla/SpaceX/DOGE，推文本身就是交易標的"
+  },
+  {
+    "handle": "@BNONews",
+    "name": "BNO News",
+    "category": "Breaking News",
+    "enabled": true,
+    "note": "突發新聞最快來源"
+  },
+  {
+    "handle": "@sentdefender",
+    "name": "Sentdefender",
+    "category": "Geopolitics/Military",
+    "enabled": true,
+    "note": "軍事/地緣政治即時情報"
+  },
+  {
+    "handle": "@WatcherGuru",
+    "name": "Watcher Guru",
+    "category": "Crypto/Market",
+    "enabled": true,
+    "note": "加密/市場動態快訊"
+  },
+  {
+    "handle": "@Polymarket",
+    "name": "Polymarket",
+    "category": "Prediction Market",
+    "enabled": true,
+    "note": "Polymarket官方帳號"
+  },
+  {
+    "handle": "@zaborek",
+    "name": "Mateusz Zaborek",
+    "category": "Geopolitics",
+    "enabled": true,
+    "note": "中東/歐洲地緣政治深度分析"
+  },
+  {
+    "handle": "@POTUS",
+    "name": "President Biden",
+    "category": "Politics/Market",
+    "enabled": true,
+    "note": "白宮官方帳號，政策公告"
+  },
+  {
+    "handle": "@DeItaone",
+    "name": "Walter Bloomberg",
+    "category": "Breaking News",
+    "enabled": true,
+    "note": "金融快訊，Bloomberg終端即時消息"
+  },
+  {
+    "handle": "@unusual_whales",
+    "name": "Unusual Whales",
+    "category": "Market/Trading",
+    "enabled": true,
+    "note": "異常交易追蹤，國會議員持倉"
   }
 ]

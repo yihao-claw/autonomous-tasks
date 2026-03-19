@@ -85,9 +85,40 @@ cat /tmp/x-{handle}.md | python3 scripts/x-check-new.py \
 - target: `-1003767828002`
 - threadId: `36`
 
-### Step 4 — 無新內容
+### Step 4 — X 趨勢搜尋（每次必做，不受帳號有無新推文影響）
 
-所有帳號都沒有新推文 → 回覆 **HEARTBEAT_OK**，結束。
+用 `web_search` 搜尋 X 上最新科技趨勢討論，補充帳號追蹤的盲點。
+
+**搜尋查詢清單**（每次跑 3 條，交替輪換避免重複）：
+
+```
+site:x.com AI agent 2026          → Agentic AI 最新討論
+site:x.com robotics embodied AI   → 具身智能/機器人
+site:x.com LLM breakthrough       → 模型突破
+site:x.com AI productivity        → AI生產力趨勢
+site:x.com vibe coding            → 開發者工具
+```
+
+**篩選標準**：
+- 標題/描述包含實質觀點（非廣告/活動）
+- 優先選最近 1 週內的貼文
+- 排除已追蹤帳號（避免重複）
+
+**去重**：對比 `x-tracker-state.json` 裡的 `trendSearchHistory`（保留最近 50 條 URL），跳過已見過的。
+
+**格式**（如有值得推送的趨勢話題，附加在帳號推文之後）：
+
+```
+🔍 X 趨勢快報
+📌 [主題]：[2-3 行描述，提煉核心討論]
+🔗 https://x.com/...
+```
+
+最多推送 3 條趨勢結果，若無值得推送的內容則靜默跳過。
+
+### Step 5 — 無新內容
+
+所有帳號都沒有新推文，且趨勢搜尋也無值得推送的內容 → 回覆 **HEARTBEAT_OK**，結束。
 
 ## 帳號管理
 
@@ -102,7 +133,7 @@ cat /tmp/x-{handle}.md | python3 scripts/x-check-new.py \
 }
 ```
 
-## Step 5 — 市場推文共享（給 Bull）
+## Step 6 — 市場推文共享（給 Bull）
 
 對 category 含 `Politics`、`Market`、`Breaking News`、`Geopolitics`、`Crypto`、`Prediction Market`、`Trading` 的帳號推文，額外寫入共享 feed：
 

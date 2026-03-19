@@ -264,5 +264,47 @@
     "category": "Market/Trading",
     "enabled": true,
     "note": "異常交易追蹤，國會議員持倉"
+  },
+  {
+    "handle": "@TheRundownAI",
+    "name": "The Rundown AI",
+    "category": "AI/Trends",
+    "enabled": true,
+    "note": "每日AI新聞聚合，100萬+訂閱，趨勢整理最佳來源"
+  },
+  {
+    "handle": "@AIHighlight",
+    "name": "AI Highlight",
+    "category": "AI/Trends",
+    "enabled": true,
+    "note": "每日AI工具與提示整理，X上最多人轉發的AI趨勢帳號之一"
+  },
+  {
+    "handle": "@Hesamation",
+    "name": "Hessam",
+    "category": "AI/ML",
+    "enabled": true,
+    "note": "AI/ML研究熱門討論帳號，X上評為AI/ML king"
+  },
+  {
+    "handle": "@Gartner_inc",
+    "name": "Gartner",
+    "category": "Tech/Research",
+    "enabled": true,
+    "note": "科技研究機構，每年Top 10 Strategic Tech Trends"
+  },
+  {
+    "handle": "@cbinsights",
+    "name": "CB Insights",
+    "category": "Tech/VC Research",
+    "enabled": true,
+    "note": "科技創投研究，每年Tech Trends Report，Physical AI/Robotics等趨勢"
+  },
+  {
+    "handle": "@rowancheung",
+    "name": "Rowan Cheung",
+    "category": "AI/Trends",
+    "enabled": true,
+    "note": "The Rundown創辦人，AI趨勢整理，大量轉推流量"
   }
 ]

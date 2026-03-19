@@ -4,9 +4,14 @@
 
 ## 架構
 
-- **Brightdata MCP** (`@brightdata/mcp`) 做 scraping，繞過 X 的反爬蟲
-- **x-check-new.py** 解析 markdown、提取推文、對比 state 去重
+- **Brightdata REST API** (`datasets/v3`) 做 scraping，批次處理所有帳號（1 次 API call = 所有帳號）
+- **x-scrape-rest.py** 呼叫 REST API，回傳結構化 JSON（非 markdown）
+- **x-check-new.py** 解析 markdown（legacy）、對比 state 去重
+- **x-daily-run.py**（在 x-monitor/）直接使用 REST API，不依賴 x-scrape-rest.py
 - **April agent** 負責內容篩選、摘要、推送
+
+> **性能對比**：REST API 批次 19 帳號約 8-15 秒（1 次 API call）；
+> MCP 方式每帳號 30-90 秒，常 timeout。
 
 ## 配置檔
 
@@ -25,26 +30,25 @@ cd /home/node/.openclaw/workspace/projects/x-tracker
 BRIGHTDATA_API_TOKEN=$(python3 -c "import json; print(json.load(open('/home/node/.openclaw/agents/bird/agent/secrets/brightdata.json'))['BRIGHTDATA_API_TOKEN'])")
 ```
 
-### Step 1 — 逐帳號 Scrape + 去重
+### Step 1 — 批次 Scrape（REST API）
 
-對 `x-accounts.json` 中每個 `enabled: true` 的帳號：
+**推薦方式**：使用 x-monitor/x-daily-run.py，一次批次所有帳號：
 
 ```bash
-# Scrape profile page
-BRIGHTDATA_API_TOKEN="$TOKEN" bash scripts/x-scrape.sh "https://x.com/{handle}" 90 \
-  > /tmp/x-{handle}.md
-
-# Parse and deduplicate
-cat /tmp/x-{handle}.md | python3 scripts/x-check-new.py \
-  --handle @{handle} \
-  --state x-tracker-state.json \
-  --update-state
+cd /home/node/.openclaw/workspace/projects/x-monitor
+python3 x-daily-run.py
 ```
 
-- `hasNew: false` → 跳過此帳號
-- `hasNew: true` → 繼續 Step 2
+**單帳號方式**（如需測試）：
 
-**限流**：每個帳號 scrape 間隔至少 3 秒（`sleep 3`），避免 Brightdata rate limit。
+```bash
+cd /home/node/.openclaw/workspace/projects/x-tracker
+python3 scripts/x-scrape-rest.py --handles karpathy --max-posts 5 --timeout 60
+```
+
+回傳 JSON 陣列，每個 profile 包含 `posts` 陣列，每篇推文有 `post_id`, `description`, `date_posted`, `post_url`。
+
+> **注意**：MCP 方式（x-scrape.sh）已棄用，僅保留備用。
 
 ### Step 2 — 內容篩選與摘要
 

@@ -3,17 +3,18 @@
 # Run this after container restart to restore missing binaries
 # Horse 🐴 | 2026-03-13
 
-set -e
+set +e  # continue even if individual installs fail
 BIN=/usr/local/bin
 LOG_PREFIX="[setup.sh]"
 
 log() { echo "$LOG_PREFIX $1"; }
 
-# 1. obsidian-cli (notesmd-cli)
+# 1. obsidian-cli (notesmd-cli binary in workspace bin/)
+OBSIDIAN_BIN=/home/node/.openclaw/workspace/bin/obsidian-cli
 if ! command -v obsidian-cli &>/dev/null; then
-  log "Installing obsidian-cli..."
-  npm install -g notesmd-cli
-  log "obsidian-cli installed: $(obsidian-cli --version 2>/dev/null)"
+  log "Symlinking obsidian-cli from workspace bin..."
+  ln -sf "$OBSIDIAN_BIN" /usr/local/bin/obsidian-cli
+  log "obsidian-cli installed: $(/usr/local/bin/obsidian-cli --version 2>/dev/null)"
 else
   log "obsidian-cli: OK ($(obsidian-cli --version 2>/dev/null))"
 fi

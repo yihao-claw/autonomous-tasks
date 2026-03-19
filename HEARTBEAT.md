@@ -1,5 +1,12 @@
 # HEARTBEAT.md
 
+## 📊 Claude Budget 監控（每次 heartbeat 必檢查）
+
+1. 跑 `python3 tools/claude-budget/check_budget.py --alert-only`
+2. 如果有輸出（warning/critical）→ 通知 Yihao
+3. 如果 Session >80%：暫停非緊急 cron，等重置
+4. 如果 Weekly >85%：所有非緊急任務降級 Sonnet
+
 ## 🔴 Daily Memory Backup (CRITICAL - DO NOT SKIP!)
 
 **執行頻率：每次 heartbeat 都檢查！**

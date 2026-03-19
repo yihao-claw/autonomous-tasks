@@ -30,7 +30,7 @@
    - ❌ 失敗 → 發 Telegram 通知 + 記錄錯誤到日誌
 
 **Cron Job 清單：**（使用完整 UUID 查詢）
-- `71c85d19-ff69-409f-b03d-9d7bed7c8268` — daily-world-news（每日 JST 13:00）→ **已遷移到 bird agent**
+- `71c85d19-ff69-409f-b03d-9d7bed7c8268` — daily-world-news（每日 JST 13:00）→ **已遷移到 April agent**
 - `e1385348-4cb3-4449-9bb7-03dcdb2c999a` — backup-reminder（每 12h）
 - `7bdad333-78cc-4bbe-980b-f52298723484` — autonomous-daily-tasks（每日 JST 01:00）
 

@@ -1,4 +1,4 @@
-# X Tracker Skill — Bird 🐦
+# X Tracker Skill — April 🐦
 
 追蹤指定 X/Twitter 帳號的最新推文，篩選有價值內容，推送到 Telegram。
 
@@ -6,7 +6,7 @@
 
 - **Brightdata MCP** (`@brightdata/mcp`) 做 scraping，繞過 X 的反爬蟲
 - **x-check-new.py** 解析 markdown、提取推文、對比 state 去重
-- **Bird agent** 負責內容篩選、摘要、推送
+- **April agent** 負責內容篩選、摘要、推送
 
 ## 配置檔
 

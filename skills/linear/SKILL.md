@@ -19,7 +19,7 @@ bash $SKILL_DIR/scripts/linear.sh list
 bash $SKILL_DIR/scripts/linear.sh list todo
 
 # Create issue (priority: 1=Urgent 2=High 3=Medium 4=Low)
-bash $SKILL_DIR/scripts/linear.sh create "Title" "Description" 2 "Horse"
+bash $SKILL_DIR/scripts/linear.sh create "Title" "Description" 2 "Vince"
 
 # Update issue state (states: Todo, In Progress, In Review, Done, Canceled, Duplicate)
 bash $SKILL_DIR/scripts/linear.sh update YIH-10 state "Done"
@@ -44,9 +44,9 @@ bash $SKILL_DIR/scripts/linear.sh states
 
 ## Labels
 
-- **Horse** — Engineering/autonomous tasks agent
+- **Vince** — Engineering/autonomous tasks agent
 - **Dan** — Main assistant agent
-- **Bird** — News/information agent
+- **April** — News/information agent
 
 ## Workflow
 

@@ -1,7 +1,7 @@
-# SKILL.md — Autonomous Daily Tasks (Horse 🐴)
+# SKILL.md — Autonomous Daily Tasks (Vince 🐴)
 
 ## Purpose
-Horse's daily autonomous task runner. Executed once per day via cron job `7bdad333` at JST 01:00.
+Vince's daily autonomous task runner. Executed once per day via cron job `7bdad333` at JST 01:00.
 
 ---
 
@@ -13,7 +13,7 @@ Horse's daily autonomous task runner. Executed once per day via cron job `7bdad3
 cat /home/node/.openclaw/workspace/AUTONOMOUS.md
 
 # Read memory
-cat /home/node/obsidian-vault/Agents/Horse/MEMORY.md
+cat /home/node/obsidian-vault/Agents/Vince/MEMORY.md
 
 # Check cron health (look for consecutiveErrors > 0)
 openclaw cron list
@@ -42,7 +42,7 @@ git push
 ```
 
 ### 5. Write Daily Note
-Path: `/home/node/obsidian-vault/Agents/Horse/Daily/YYYY-MM-DD.md`
+Path: `/home/node/obsidian-vault/Agents/Vince/Daily/YYYY-MM-DD.md`
 
 ```markdown
 ---
@@ -50,9 +50,9 @@ date: YYYY-MM-DD
 tags:
   - daily
   - agent/horse
-agent: Horse
+agent: Vince
 ---
-# YYYY-MM-DD Horse Daily
+# YYYY-MM-DD Vince Daily
 
 ## ✅ Tasks Completed
 - [task name]: [what was done, output path/result]
@@ -68,7 +68,7 @@ agent: Horse
 ```
 
 ### 6. Update MEMORY.md (if significant)
-Path: `/home/node/obsidian-vault/Agents/Horse/MEMORY.md`
+Path: `/home/node/obsidian-vault/Agents/Vince/MEMORY.md`
 
 Only update when: new decision made, important lesson learned, system architecture changed.
 
@@ -76,7 +76,7 @@ Only update when: new decision made, important lesson learned, system architectu
 
 ## Guardrails
 
-- **Do NOT touch** Bird cron jobs: `yt-channels-hourly`, `yt-channels-daily`, `daily-world-news`
+- **Do NOT touch** April cron jobs: `yt-channels-hourly`, `yt-channels-daily`, `daily-world-news`
 - **Do NOT edit** `AUTONOMOUS.md` from subagents (human-owned)
 - Run `openclaw doctor --non-interactive` before any config changes
 - If AUTONOMOUS.md has no goals → write status note and exit cleanly

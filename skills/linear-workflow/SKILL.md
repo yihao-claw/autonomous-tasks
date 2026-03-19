@@ -46,7 +46,7 @@ bash $SKILL_DIR/scripts/linear.sh search "關鍵字"
 ```
 
 Priority: 1=Urgent 2=High 3=Medium 4=Low
-Labels: `Horse` / `Dan` / `Bird`
+Labels: `Vince` / `Dan` / `April`
 
 ---
 

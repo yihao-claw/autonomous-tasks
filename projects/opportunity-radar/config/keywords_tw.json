@@ -1,0 +1,6 @@
+{
+  "pain_signals": ["好麻煩", "超不方便", "為什麼沒有", "好想有", "有沒有推薦", "求推薦", "求app", "哪個app比較好", "找不到好用的", "一直出問題"],
+  "categories": ["理財", "工作", "健康", "通勤", "購物", "租屋", "飲食", "學習"],
+  "boards_ptt": ["Lifeismoney", "salary", "Tech_Job", "iOS", "Android", "MobileComm"],
+  "boards_dcard": ["工作", "理財", "生活", "科技"]
+}

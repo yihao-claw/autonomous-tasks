@@ -1,0 +1,5 @@
+{
+  "pain_signals": ["不便", "使いにくい", "欲しいアプリ", "おすすめアプリ", "困っている", "なぜない", "改善してほしい"],
+  "categories": ["finance", "work", "health", "transportation", "shopping", "housing"],
+  "subreddits": ["japanlife", "movingtojapan", "japanfinance", "japantravel"]
+}

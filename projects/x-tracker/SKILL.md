@@ -133,7 +133,7 @@ site:x.com vibe coding            → 開發者工具
 }
 ```
 
-## Step 6 — 市場推文共享（給 Bull）
+## Step 6 — 市場推文共享（給 Alvin）
 
 對 category 含 `Politics`、`Market`、`Breaking News`、`Geopolitics`、`Crypto`、`Prediction Market`、`Trading` 的帳號推文，額外寫入共享 feed：
 
@@ -168,7 +168,7 @@ feed["updatedAt"] = datetime.utcnow().isoformat() + "Z"
 json.dump(feed, open(FEED_PATH, "w"), indent=2, ensure_ascii=False)
 ```
 
-Bull 在掃描市場時讀取 `/home/node/.openclaw/shared/x-market-feed/latest.json` 即可獲得最新市場情報。
+Alvin 在掃描市場時讀取 `/home/node/.openclaw/shared/x-market-feed/latest.json` 即可獲得最新市場情報。
 
 ## 注意事項
 

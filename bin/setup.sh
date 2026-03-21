@@ -50,4 +50,13 @@ else
   log "deno: OK ($(deno --version 2>/dev/null | head -1))"
 fi
 
+# 5. Python packages for quant-invest
+if ! python3 -c "import pandas, yfinance" 2>/dev/null; then
+  log "Installing pandas + yfinance for quant-invest..."
+  pip install pandas yfinance -q 2>/dev/null
+  log "pandas + yfinance installed"
+else
+  log "pandas + yfinance: OK"
+fi
+
 log "Setup complete."

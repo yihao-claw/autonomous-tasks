@@ -1,6 +1,6 @@
 {
   "seenHashes": {},
-  "lastCheck": "2026-03-21T16:16:18.122480+00:00",
+  "lastCheck": "2026-03-22T13:04:42.116826+00:00",
   "seenIds": {
     "andrewyng": [
       "2008956639894786402",
@@ -358,7 +358,11 @@
       "2035037232533246049",
       "2035033429612372144",
       "2035160240405073992",
-      "2035230716477227189"
+      "2035230716477227189",
+      "2035380461841613167",
+      "2035533382826831928",
+      "2035508232198701219",
+      "2035506218458845411"
     ],
     "polymarket": [
       "2035090740741558486",
@@ -431,7 +435,17 @@
       "2035166129748865305",
       "2035260370202263965",
       "2035228661323112961",
-      "2035291072524386691"
+      "2035291072524386691",
+      "2035438603917017453",
+      "2035429287726023085",
+      "2035406744713625672",
+      "2035400544475340899",
+      "2035371573763350694",
+      "2035703267708014943",
+      "2035652957111247126",
+      "2035620493026566624",
+      "2035560850166272438",
+      "2035540289268453624"
     ],
     "potus": [
       "2035105166697902360",
@@ -462,7 +476,9 @@
       "2034453527892791768",
       "2035057853858275546",
       "2035057800984900081",
-      "2035384243841327339"
+      "2035384243841327339",
+      "2035415045182460136",
+      "2035406902041997420"
     ],
     "deitaone": [
       "2034225033241866527",
@@ -507,7 +523,8 @@
       "2034274807399817405",
       "2033911086009745672",
       "2034882669729771754",
-      "2034822265729167719"
+      "2034822265729167719",
+      "2035372106847043598"
     ],
     "aihighlight": [
       "319430459354406912",
@@ -604,7 +621,19 @@
       "2035166129748865305",
       "2035104960921100395",
       "2035371573763350694",
-      "2035364194241908853"
+      "2035364194241908853",
+      "2035498935217762813",
+      "2035495015984603368",
+      "2035468649998291159",
+      "2035467823259017463",
+      "2035457390221414574",
+      "2035560850166272438",
+      "2035540289268453624",
+      "2035522647623074265",
+      "2035511601462215163",
+      "2035620493026566624",
+      "2035593817257353490",
+      "2035652957111247126"
     ],
     "WatcherGuru": [
       "2035088681636184175",
@@ -613,7 +642,18 @@
       "2035160240405073992",
       "2035147990977921376",
       "2035077508329070671",
-      "2035380461841613167"
+      "2035380461841613167",
+      "2035508232198701219",
+      "2035506218458845411",
+      "2035533382826831928"
+    ],
+    "POTUS": [
+      "2035415045182460136",
+      "2035406902041997420",
+      "2035384243841327339"
+    ],
+    "realDonaldTrump": [
+      "2028505632123326484"
     ]
   },
   "trendSearchHistory": [
@@ -621,6 +661,62 @@
     "https://www.nytimes.com/2026/03/19/technology/ai-agents-uses.html",
     "https://x.com/arcprize/status/2016938079924474295",
     "https://roboticsandautomationnews.com/2026/03/15/neura-robotics-and-qualcomm-enter-strategic-collaboration-to-advance-physical-ai-and-cognitive-robotics/99677/",
-    "https://www.morningstar.com/news/pr-newswire/20260319cn14290/breaking-the-100m-token-limit-everminds-msa-architecture-achieves-efficient-end-to-end-long-term-memory-for-llms"
-  ]
+    "https://www.morningstar.com/news/pr-newswire/20260319cn14290/breaking-the-100m-token-limit-everminds-msa-architecture-achieves-efficient-end-to-end-long-term-memory-for-llms",
+    "https://www.cnbc.com/2026/03/20/nvidia-gtc-2026-agentic-ai-chips-tech-download.html",
+    "https://blog.google/innovation-and-ai/technology/developers-tools/full-stack-vibe-coding-google-ai-studio/",
+    "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+    "https://www.reuters.com/business/energy/oil-extends-gains-middle-east-conflict-threatens-export-facilities-2026-03-15/",
+    "https://www.nytimes.com/live/2026/03/20/world/iran-war-oil-trump",
+    "https://www.reuters.com/business/energy/oil-falls-us-allies-look-boost-supply-unchoke-strait-hormuz-2026-03-20/",
+    "https://www.reuters.com/business/energy/us-authorizes-temporary-delivery-sale-oil-originating-iran-2026-03-20/",
+    "https://marketwise.com/investing/elon-musk-spacex-ipo-how-to-invest/",
+    "https://finance.yahoo.com/news/spacex-could-ipo-june-1-222500989.html",
+    "https://seekingalpha.com/news/4565862-2026-ipo-watchlist-openai-spacex-anthropic-discord-kraken-and-more",
+    "https://stocktwits.com/news-articles/markets/equity/spacex-will-far-exceed-everyone-combined-in-ai-race-says-elon-musk-as-ipo-looms/cZ33Y7iRIQQ",
+    "https://www.cnbc.com/2026/03/21/openclaw-chatgpt-moment-sparks-concern-ai-models-becoming-commodities.html",
+    "https://www.cnn.com/2026/03/16/tech/nvidia-jensen-huang-ai-agents",
+    "https://www.forbes.com/sites/bernardmarr/2026/03/18/20-amazing-vibe-coding-tools-everyone-needs-to-know-about/"
+  ],
+  "handles": {
+    "therundownai": {
+      "seen_ids": [
+        "2035372106847043598",
+        "2035457866950127931",
+        "2035055376719389143"
+      ]
+    },
+    "watcherguru": {
+      "seen_ids": [
+        "2035508232198701219",
+        "2035380461841613167",
+        "2035506218458845411",
+        "2035147990977921376",
+        "2035160240405073992"
+      ]
+    },
+    "polymarket": {
+      "seen_ids": [
+        "2035468649998291159",
+        "2035498935217762813",
+        "2035495015984603368",
+        "2035511601462215163",
+        "2035467823259017463"
+      ]
+    },
+    "potus": {
+      "seen_ids": [
+        "2035105186339754381",
+        "2035406902041997420",
+        "2035384243841327339",
+        "2035415045182460136",
+        "2035105210067296469"
+      ]
+    },
+    "ollama": {
+      "seen_ids": [
+        "2035242146366898679",
+        "2035017369035448830"
+      ]
+    }
+  }
 }

@@ -32,20 +32,30 @@ fi
 # 3. ffmpeg
 if ! command -v ffmpeg &>/dev/null; then
   log "Installing ffmpeg..."
-  apt-get install -y ffmpeg -qq 2>/dev/null || \
-    apk add ffmpeg --no-progress 2>/dev/null || \
-    log "ffmpeg: could not install (unknown OS), manual install required"
+  if command -v apt-get &>/dev/null; then
+    apt-get install -y ffmpeg -qq 2>/dev/null && log "ffmpeg installed via apt" || {
+      apt-get update -qq 2>/dev/null
+      apt-get install -y ffmpeg -qq 2>/dev/null && log "ffmpeg installed via apt (after update)" || log "ffmpeg: apt install failed"
+    }
+  elif command -v apk &>/dev/null; then
+    apk add ffmpeg --no-progress 2>/dev/null && log "ffmpeg installed via apk" || log "ffmpeg: apk install failed"
+  else
+    log "ffmpeg: could not install (unknown package manager)"
+  fi
 else
-  log "ffmpeg: OK"
+  log "ffmpeg: OK ($(ffmpeg -version 2>/dev/null | head -1 | cut -d' ' -f1-3))"
 fi
 
 # 4. deno (optional, used by some scripts)
-if ! command -v deno &>/dev/null; then
-  log "Installing deno..."
-  curl -fsSL https://deno.land/install.sh | sh -s -- --no-modify-path 2>/dev/null
-  ln -sf /root/.deno/bin/deno $BIN/deno 2>/dev/null || \
-    ln -sf /home/node/.deno/bin/deno $BIN/deno 2>/dev/null || true
-  log "deno: $(deno --version 2>/dev/null | head -1 || echo 'installed but not in PATH')"
+DENO_BIN=${HOME}/.deno/bin/deno  # installs to $HOME/.deno (varies by user)
+if ! command -v deno &>/dev/null && [ ! -f "$DENO_BIN" ]; then
+  log "Installing deno (requires unzip)..."
+  command -v unzip &>/dev/null || apt-get install -y unzip -qq 2>/dev/null
+  curl -fsSL https://deno.land/install.sh | sh 2>/dev/null
+  [ -f "$DENO_BIN" ] && ln -sf "$DENO_BIN" /usr/local/bin/deno && log "deno: $($DENO_BIN --version 2>/dev/null | head -1)" || log "deno: install failed"
+elif [ -f "$DENO_BIN" ] && ! command -v deno &>/dev/null; then
+  ln -sf "$DENO_BIN" /usr/local/bin/deno
+  log "deno: symlinked — $($DENO_BIN --version 2>/dev/null | head -1)"
 else
   log "deno: OK ($(deno --version 2>/dev/null | head -1))"
 fi

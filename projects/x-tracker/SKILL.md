@@ -2,6 +2,17 @@
 
 追蹤指定 X/Twitter 帳號的最新推文，篩選有價值內容，推送到 Telegram。
 
+## 🔍 Search Fallback
+
+If `web_search` is unavailable or returns errors (quota exhausted, rate limited):
+
+```bash
+python3 ~/.openclaw/workspace/skills/smart-search/scripts/smart_search.py \
+  --query "your query" --type news --freshness day --limit 10 --json
+```
+
+Fallback chain: Brave API → SearXNG (local) → DuckDuckGo. Use `--type news` for current events, `--type text` for general search.
+
 ## 架構
 
 - **Brightdata REST API** (`datasets/v3`) 做 scraping，批次處理所有帳號（1 次 API call = 所有帳號）
@@ -65,7 +76,7 @@ python3 scripts/x-scrape-rest.py --handles karpathy --max-posts 5 --timeout 60
 - 廣告/推廣內容
 - 無實質內容的短推（< 50 字且無數據）
 
-對值得推送的推文，用 `web_search` 搜尋補充背景（1 次即可）。
+對值得推送的推文，用 `web_search` 搜尋補充背景（1 次即可）。（若 web_search 失敗，改用 smart_search.py —— 見上方 Search Fallback）
 
 ### Step 3 — 推送 Telegram
 
@@ -91,7 +102,7 @@ python3 scripts/x-scrape-rest.py --handles karpathy --max-posts 5 --timeout 60
 
 ### Step 4 — X 趨勢搜尋（每次必做，不受帳號有無新推文影響）
 
-用 `web_search` 搜尋 X 上最新科技趨勢討論，補充帳號追蹤的盲點。
+用 `web_search` 搜尋 X 上最新科技趨勢討論，補充帳號追蹤的盲點。（若 web_search 失敗，改用 smart_search.py —— 見上方 Search Fallback）
 
 **搜尋查詢清單**（每次跑 3 條，交替輪換避免重複）：
 

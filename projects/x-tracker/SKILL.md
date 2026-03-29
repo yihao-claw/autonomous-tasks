@@ -13,6 +13,20 @@ python3 ~/.openclaw/workspace/skills/smart-search/scripts/smart_search.py \
 
 Fallback chain: Brave API → SearXNG (local) → DuckDuckGo. Use `--type news` for current events, `--type text` for general search.
 
+## ⚠️ Quota Guard (重要！)
+
+**Before Step 2**, check the quota flag file:
+```bash
+cat /tmp/brave-quota-exhausted 2>/dev/null && echo "QUOTA_EXHAUSTED" || echo "QUOTA_OK"
+```
+- If `QUOTA_EXHAUSTED` → **skip ALL web_search and smart_search.py calls for this session**
+  - Step 2: judge tweet value from content only (no background search)
+  - Step 4: skip entirely
+- If `QUOTA_OK` → do ONE test call: `web_search("test")`
+  - If it returns results → proceed normally
+  - If it returns quota error / rate limit → skip all search (treat as exhausted)
+- **NEVER do web_search if your cron instruction already says quota is exhausted** — the test call itself will hang
+
 ## 架構
 
 - **Brightdata REST API** (`datasets/v3`) 做 scraping，批次處理所有帳號（1 次 API call = 所有帳號）

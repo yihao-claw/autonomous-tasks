@@ -1,5 +1,19 @@
 # HEARTBEAT.md
 
+## 🔄 Container Restart Self-Check
+
+**Only needed if container just restarted (check with `uptime` or if binaries missing).**
+
+```bash
+bash /home/node/.openclaw/workspace/bin/setup.sh
+```
+
+Covers: `obsidian-cli`, `yt-dlp`, `ffmpeg`, `deno`, `jq`, Python packages (`pandas`, `yfinance`, `requests`, `bs4`, `feedparser`, `httpx`, `numpy`)
+
+Run this before any task if you get "command not found" or import errors.
+
+---
+
 ## 📊 Claude Budget 監控（每次 heartbeat 必檢查）
 
 1. 跑 `python3 tools/claude-budget/check_budget.py --alert-only`

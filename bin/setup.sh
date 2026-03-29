@@ -60,13 +60,28 @@ else
   log "deno: OK ($(deno --version 2>/dev/null | head -1))"
 fi
 
-# 5. Python packages for quant-invest
-if ! python3 -c "import pandas, yfinance" 2>/dev/null; then
-  log "Installing pandas + yfinance for quant-invest..."
-  pip install pandas yfinance -q 2>/dev/null
-  log "pandas + yfinance installed"
+# 5. Python packages
+REQUIRED_PKGS="pandas yfinance requests bs4 feedparser httpx numpy"
+MISSING=""
+for pkg in $REQUIRED_PKGS; do
+  # bs4 is imported as 'bs4', feedparser as 'feedparser', etc.
+  python3 -c "import $pkg" 2>/dev/null || MISSING="$MISSING $pkg"
+done
+if [ -n "$MISSING" ]; then
+  log "Installing missing Python packages:$MISSING..."
+  # beautifulsoup4 is the installable name for bs4
+  INSTALL_NAMES=$(echo "$MISSING" | sed 's/bs4/beautifulsoup4/g')
+  pip install $INSTALL_NAMES -q 2>/dev/null && log "Installed:$MISSING" || log "WARNING: some packages may have failed"
 else
-  log "pandas + yfinance: OK"
+  log "Python packages: OK (pandas, yfinance, requests, bs4, feedparser, httpx, numpy)"
+fi
+
+# 6. jq (used by linear scripts)
+if ! command -v jq &>/dev/null; then
+  log "Installing jq..."
+  apt-get install -y jq -qq 2>/dev/null && log "jq installed" || log "jq: install failed"
+else
+  log "jq: OK ($(jq --version))"
 fi
 
 log "Setup complete."

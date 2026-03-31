@@ -50,6 +50,12 @@ Run this before any task if you get "command not found" or import errors.
    - ✅ 成功 → 發 Telegram 通知到「每日資訊」(target: -1003767828002, threadId: 36)
    - ❌ 失敗 → 發 Telegram 通知 + 記錄錯誤到日誌
 
+**失敗自動重跑規則：**
+- 檢查最近一次執行的 `delivered` 狀態和 `durationMs`
+- 如果 `delivered: false` 或 `durationMs < 300000`（< 5 分鐘，正常約 15 分鐘）→ 視為失敗
+- 失敗 → 自動 `cron run` 重跑一次，並通知 Yihao
+- **每個 job 每天最多自動重跑 1 次**，避免無限循環
+
 **Cron Job 清單：**（使用完整 UUID 查詢）
 - `71c85d19-ff69-409f-b03d-9d7bed7c8268` — daily-world-news（每日 JST 13:00）→ **已遷移到 April agent**
 - `e1385348-4cb3-4449-9bb7-03dcdb2c999a` — backup-reminder（每 12h）

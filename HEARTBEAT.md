@@ -1,5 +1,24 @@
 # HEARTBEAT.md
 
+## 🎙️ Podcast 發布審核（每次 heartbeat 檢查）
+
+Yihao 每天 JST 07:00-09:00 會聽 Telegram 上的 podcast。
+如果他回覆 👍 emoji 或明確說「OK」「可以上」「發布」→ 執行 PHASE 5：
+
+```bash
+cd /home/node/.openclaw/workspace/projects/daily-world-news
+TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+bash scripts/upload-r2.sh summaries/${TODAY}.mp3 podcasts/${TODAY}.mp3
+python3 scripts/generate-rss.py
+bash scripts/upload-r2.sh summaries/feed.xml feed.xml
+```
+
+然後回覆確認：「✅ 已發布到 Spotify/Apple Podcast」
+
+**如果他回覆修改意見** → 根據意見修改 podcast 稿 → 重新生成音頻 → 重新發到 Telegram → 等下一次審核。
+
+---
+
 ## 🔄 Container Restart Self-Check
 
 **Only needed if container just restarted (check with `uptime` or if binaries missing).**

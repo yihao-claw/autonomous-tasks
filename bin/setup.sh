@@ -76,7 +76,23 @@ else
   log "Python packages: OK (pandas, yfinance, requests, bs4, feedparser, httpx, numpy)"
 fi
 
-# 6. jq (used by linear scripts)
+# 6. age (used by backup encryption)
+if ! command -v age &>/dev/null; then
+  log "Installing age..."
+  AGE_VERSION="v1.3.1"
+  AGE_URL="https://github.com/FiloSottile/age/releases/download/${AGE_VERSION}/age-${AGE_VERSION}-linux-arm64.tar.gz"
+  TMP_DIR=$(mktemp -d)
+  curl -sL "$AGE_URL" -o "$TMP_DIR/age.tar.gz" && \
+    tar -xzf "$TMP_DIR/age.tar.gz" -C "$TMP_DIR" && \
+    cp "$TMP_DIR/age/age" /usr/local/bin/age && \
+    chmod +x /usr/local/bin/age && \
+    log "age installed: $(age --version)" || log "age: install failed"
+  rm -rf "$TMP_DIR"
+else
+  log "age: OK ($(age --version 2>/dev/null))"
+fi
+
+# 7. jq (used by linear scripts)
 if ! command -v jq &>/dev/null; then
   log "Installing jq..."
   apt-get install -y jq -qq 2>/dev/null && log "jq installed" || log "jq: install failed"
